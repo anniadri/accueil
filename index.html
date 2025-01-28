@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'Accueil</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+    .header {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 2em;
+      color: white;
+    }
+    .footer {
+      text-align: right;
+      margin: 20px;
+    }
+    .footer input {
+      padding: 10px;
+      font-size: 1em;
+    }
+    .footer button {
+      padding: 10px;
+      font-size: 1em;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Bienvenue sur le site</h1>
+  </div>
+
+  <div class="footer">
+    <input type="text" id="codeInput" placeholder="Entrez le code" />
+    <button onclick="validateCode()">Valider</button>
+  </div>
+
+  <script>
+    function validateCode() {
+      const code = document.getElementById('codeInput').value;
+      const correctCode = "1234"; // Code attendu
+      if (code === correctCode) {
+        window.location.href = "page2.html"; // Redirige vers la deuxième page
+      } else {
+        alert("Code incorrect. Réessayez !");
+      }
+    }
+  </script>
+</body>
+</html>
